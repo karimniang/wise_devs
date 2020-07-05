@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        {% block stylesheets %}
+        <link rel="stylesheet" href="bootstrap/bt_css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/style.css">
+        {% endblock %}
+    </head>
+    <body>
+    <div class="alert alert-primary " style="height: 90px;">
+        <h2 class="h-auto text-center">Wise developers University</h2>
+    </div>
+    <ul class="nav nav-tabs" id="navId">
+        <li class="nav-item">
+            <a href="{{path('accueil')}}" class="nav-link active"><img src="css/image/acc.png"> Accueil</a>
+        </li>
+        <li class="nav-item">
+            <a href="#" class=" nav-link">Ajouter Chambre</a>
+        </li>
+        <li class="nav-item">
+            <a href="{{path('etudiant')}}" class="nav-link">Ajouter Etudiant</a>
+        </li>
+        <li class="nav-item">
+            <a href="#" class="nav-link">Liste Chambre</a>
+        </li>
+        <li class="nav-item">
+            <a href="#" class="nav-link">Liste Etudiant</a>
+        </li>
+    </ul>
+        {% block body %}
+        {% endblock %}
+        {% block javascripts %}{% endblock %}
+    </body>
+</html>

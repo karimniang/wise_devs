@@ -1,0 +1,9 @@
+body {
+  background-image: url(./image/bgi.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.icon {
+  height: 17px;
+  width: 17px;
+}
