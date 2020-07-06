@@ -47,9 +47,15 @@ class Etudiant
      */
     private $date_naissance;
 
+    /**
+     * @ORM\OneToOne(targetEntity=boursier::class, cascade={"persist", "remove"})
+     */
+    private $Etudiant;
 
-
-
+    /**
+     * @ORM\OneToOne(targetEntity=NonBoursier::class, cascade={"persist", "remove"})
+     */
+    private $EtudiantNonBoursier;
 
     public function getId(): ?int
     {
@@ -124,6 +130,30 @@ class Etudiant
     public function setDateNaissance(\DateTimeInterface $date_naissance): self
     {
         $this->date_naissance = $date_naissance;
+
+        return $this;
+    }
+
+    public function getEtudiant(): ?boursier
+    {
+        return $this->Etudiant;
+    }
+
+    public function setEtudiant(?boursier $Etudiant): self
+    {
+        $this->Etudiant = $Etudiant;
+
+        return $this;
+    }
+
+    public function getEtudiantNonBoursier(): ?NonBoursier
+    {
+        return $this->EtudiantNonBoursier;
+    }
+
+    public function setEtudiantNonBoursier(?NonBoursier $EtudiantNonBoursier): self
+    {
+        $this->EtudiantNonBoursier = $EtudiantNonBoursier;
 
         return $this;
     }

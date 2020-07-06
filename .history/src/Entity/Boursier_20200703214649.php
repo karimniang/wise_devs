@@ -37,10 +37,6 @@ class Boursier
      */
     private $loger;
 
-    /**
-     * @ORM\OneToOne(targetEntity=etudiant::class, cascade={"persist", "remove"})
-     */
-    private $EtudiantBoursier;
 
     public function getId(): ?int
     {
@@ -91,18 +87,6 @@ class Boursier
     public function setLoger(?chambre $loger): self
     {
         $this->loger = $loger;
-
-        return $this;
-    }
-
-    public function getEtudiantBoursier(): ?Etudiant
-    {
-        return $this->EtudiantBoursier;
-    }
-
-    public function setEtudiantBoursier(?Etudiant $EtudiantBoursier): self
-    {
-        $this->EtudiantBoursier = $EtudiantBoursier;
 
         return $this;
     }

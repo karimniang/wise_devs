@@ -14,6 +14,9 @@ class EtudiantController extends AbstractController
      */
     public function index()
     {
+        $etudiant = new Etudiant;
+        $form = $this->createForm(EtudiantType::class, $etudiant);
+        dd($form);
         return $this->render('etudiant/addEtudiant.html.twig', [
             'controller_name' => 'EtudiantController',
         ]);

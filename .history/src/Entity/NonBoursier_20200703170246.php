@@ -22,11 +22,6 @@ class NonBoursier
      */
     private $adresse;
 
-    /**
-     * @ORM\OneToOne(targetEntity=etudiant::class, cascade={"persist", "remove"})
-     */
-    private $EtudiantNonBoursier;
-
     public function getId(): ?int
     {
         return $this->id;
@@ -40,18 +35,6 @@ class NonBoursier
     public function setAdresse(string $adresse): self
     {
         $this->adresse = $adresse;
-
-        return $this;
-    }
-
-    public function getEtudiantNonBoursier(): ?Etudiant
-    {
-        return $this->EtudiantNonBoursier;
-    }
-
-    public function setEtudiantNonBoursier(?Etudiant $EtudiantNonBoursier): self
-    {
-        $this->EtudiantNonBoursier = $EtudiantNonBoursier;
 
         return $this;
     }
