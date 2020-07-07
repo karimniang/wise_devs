@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+
+
+{% block body %}
+
+    <h1>Hello Veuillez Ajouter vos chambre ✅</h1>
+
+    <form action="" method="POST" id="mon-form">
+        <div class="form-group">
+            <label for=""></label>
+            <input type="text" name="numero" id="numero_batiment" class="form-control" >
+            <small id="helpId" class="text-muted">Help text</small>
+        </div>
+        <div class="form-group">
+            <label for="type">Type de Chambre</label>
+            <select class="custom-select" name="type" id="type_chambre">
+                <option value="individuel">Individuel</option>
+                <option value="deux">A deux</option>
+            </select>
+        </div>
+    </form>
+
+{% endblock %}
+{% block javascripts %}
+<script src="JS/ajoutChambre.js"></script>
+{% endblock %}

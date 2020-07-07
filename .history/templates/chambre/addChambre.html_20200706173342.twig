@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+
+
+{% block body %}
+
+    <h1>Hello Veuillez Ajouter vos étudiants ✅</h1>
+
+    <div class="form-group">
+        {{form_start(formCham)}}
+        {{form_widget(formCham)}}
+        {{form_end(formCham)}}
+    </div>
+
+{% endblock %}

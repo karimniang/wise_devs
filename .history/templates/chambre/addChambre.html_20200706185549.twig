@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+
+
+{% block body %}
+
+    <h2 class="text-center">Hello Veuillez Ajouter vos chambre {{yess}} ✅</h2>
+
+    <form action="Controller/ChambreController.php" method="POST" id="mon-form" class="m-2">
+        <div class="form-group">
+            <label for="">Numero Batiment</label>
+            <input type="number" name="numero" id="numero_batiment" class="form-control" style="width:10%;">
+            <small id="helpId" class="text-muted"> </small>
+        </div>
+        <div class="form-group">
+            <label for="type">Type de Chambre</label>
+            <select class="custom-select" name="type" id="type_chambre" style="width:20%; display:block;">
+                <option value="individuel">Individuel</option>
+                <option value="deux">A deux</option>
+            </select>
+            <small id="helpId" class="text-muted"> </small>
+        </div>
+        <button type="button" name="ajoutChambre" id="" class="btn btn-primary btn-lg btn-block">Ajouter</button>
+    </form>
+
+{% endblock %}
+{% block javascripts %}
+<script src="JS/ajoutChambre.js"></script>
+{% endblock %}
