@@ -40,6 +40,7 @@ class Boursier
     /**
      * @ORM\OneToOne(targetEntity=Etudiant::class, cascade={"persist", "remove"})
      */
+    private $EtudiantBoursier;
 
     public function getId(): ?int
     {
