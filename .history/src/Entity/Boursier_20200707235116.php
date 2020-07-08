@@ -33,13 +33,12 @@ class Boursier
     private $isHoused;
 
     /**
-     * @ORM\ManyToOne(targetEntity=chambre::class, inversedBy="boursiers")
+     * @ORM\ManyToOne(targetEntity=Chambre::class, inversedBy="boursiers")
      */
     private $loger;
 
-    /**
-     * @ORM\OneToOne(targetEntity=Etudiant::class, cascade={"persist", "remove"})
-     */
+
+
 
     public function getId(): ?int
     {
@@ -90,18 +89,6 @@ class Boursier
     public function setLoger(?chambre $loger): self
     {
         $this->loger = $loger;
-
-        return $this;
-    }
-
-    public function getEtudiantBoursier(): ?Etudiant
-    {
-        return $this->EtudiantBoursier;
-    }
-
-    public function setEtudiantBoursier(?Etudiant $EtudiantBoursier): self
-    {
-        $this->EtudiantBoursier = $EtudiantBoursier;
 
         return $this;
     }

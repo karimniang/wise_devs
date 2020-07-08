@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+
+
+{% block body %}
+
+    <h2>Hello Voici la liste des chambres ! ✅</h2>
+
+    <table>
+      <tr>
+        <th>Numero</th>
+        <th>Type</th>
+        <th>Numero Bat</th>
+        <th colspan="3">Action</th>
+      </tr>
+      {% for chambre in chambres %}
+        <tr>
+          <td>{{chambre.numero}}</td>
+          <td>{{chambre.type}}</td>
+          <td>{{chambre.numeroBat}}</td>
+        </tr>
+      {% endfor %}
+    </table>
+    
+{% endblock %}

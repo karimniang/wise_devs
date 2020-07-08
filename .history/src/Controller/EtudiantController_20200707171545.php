@@ -1,0 +1,33 @@
+<?php
+
+namespace App\Controller;
+
+use App\Entity\Boursier;
+use App\Entity\Etudiant;
+use App\Entity\NonBoursier;
+use App\Form\BoursierType;
+use App\Form\EtudiantType;
+use App\Form\NonBoursierType;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\Routing\Annotation\Route;
+
+class EtudiantController extends AbstractController
+{
+    /**
+     * @Route("/etudiant", name="etudiant")
+     */
+    public function create()
+    {
+        $etudiant = new Etudiant;
+        $bourse = new Boursier;
+        $nonBourse = new NonBoursier;
+        $formEtudiant = $this->createForm(EtudiantType::class, $etudiant);
+        $formBourse = $this->createForm(BoursierType::class, $bourse);
+        $formNonBourse = $this->createForm(NonBoursierType::class, $nonBourse);
+        return $this->render('etudiant/addEtudiant.html.twig', [
+            'formEtud' => $formEtudiant->createView(),
+            'formBourse' => $formBourse->createView(),
+            'formNonBourse' => $formNonBourse->createView(),
+        ]);
+    }
+}

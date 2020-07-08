@@ -22,10 +22,7 @@ class NonBoursier
      */
     private $adresse;
 
-    /**
-     * @ORM\OneToOne(targetEntity=Etudiant::class, cascade={"persist", "remove"})
-     */
-    private $EtudiantNonBoursier;
+
 
     public function getId(): ?int
     {

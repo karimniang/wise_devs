@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+
+{% block body %}
+
+	<h2 class="text-center">Hello Veuillez Ajouter vos étudiants✅</h2>
+
+	{{form_start(formEtud)}}
+	{{form_widget(formEtud)}}
+	<div id="bose" style="display:block;">
+		{% for row in form.Boursier %}
+			{{form_row(row)}}
+		{% endfor %}
+	</div>
+
+
+	{{form_end(formEtud)}}
+
+
+	<button type="button" name="" id="brs" class="btn btn-primary ">Boursier</button>
+	<button type="button" name="" id="nonbrs" class="btn btn-primary ">Non boursier</button>
+	<div class="form-group">
+		<div id="bourse" style="display:none;"></div>
+		<div id="nonBourse" style="display:none;"></div>
+
+	</div>
+
+
+{% endblock %}
+{% block javascripts %}
+	<script src="JS/ajoutEtudiant.js"></script>
+{% endblock %}

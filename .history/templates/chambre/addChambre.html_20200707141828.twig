@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+        
+        
+        
+
+{% block body %}
+        <link rel="stylesheet" href="bootstrap/bt_css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/style.css">
+        <style>
+            .example-wrapper { background: blue; margin: 2em auto; max-width: 900px; width: 95%; font: 18px/1.5 sans-serif; }
+            .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+        </style>
+
+    <h2 class="text-center">Hello Veuillez Ajouter vos chambre ✅</h2>
+
+    <form action="" method="POST" id="mon-form" class="m-2">
+        <div class="form-group">
+            <label for="">Numero Batiment</label>
+            <input type="number" name="numero" id="numero_batiment" value="{{chambre.numeroBat}}" class="form-control" style="width:10%;">
+            <small id="helpId" class="text-muted"> </small>
+        </div>
+        <div class="form-group">
+            <label for="type">Type de Chambre</label>
+            <select class="custom-select" name="type" id="type_chambre" value="{{chambre.type}}" style="width:20%; display:block;">
+                <option value="" disabled selected>Donnez le type de chambre</option>
+                <option value="individuel">Individuel</option>
+                <option value="double">A deux</option>
+            </select>
+            <small id="helpId" class="text-muted"> </small>
+        </div>
+        <button type="submit" name="ajoutChambre" id="" class="btn btn-primary btn-lg btn-block">Ajouter</button>
+        <h6 class="text-center alert-danger">{{yess}}</h6>
+    </form>
+
+{% endblock %}
+{% block javascripts %}
+<script src="JS/ajoutChambre.js"></script>
+{% endblock %}
