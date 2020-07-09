@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>
+			{% block title %}Welcome Devs!
+			{% endblock %}
+		</title>
+		{% block stylesheets %}
+			<link rel="stylesheet" href="css/style.css">
+			<style>
+				.example-wrapper {
+					background: blue;
+					margin: 2em auto;
+					max-width: 900px;
+					width: 95%;
+					font: 18px / 1.5 sans-serif;
+				}
+				.example-wrapper code {
+					background: #F5F5F5;
+					padding: 2px 6px;
+				}
+			</style>
+			<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+			<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+			<link rel="stylesheet" type="text/css" href="/DataTables/datatables.min.css">
+			<script type="text/javascript" charset="utf8" src="/DataTables/datatables.min.js"></script>
+
+		{% endblock %}
+	</head>
+	<body>
+		<div class="alert alert-primary " style="height: 90px;">
+			<h2 class="h-auto text-center">Wise developers University</h2>
+		</div>
+		<ul class="nav nav-tabs" id="navId">
+			<li class="nav-item">
+				<a href="{{path('accueil')}}" class="nav-link active"><img src="css/image/acc.png" class="icon">
+					Accueil</a>
+			</li>
+			<li class="nav-item">
+				<a href="{{path('chambre')}}" class=" nav-link">Ajouter Chambre</a>
+			</li>
+			<li class="nav-item">
+				<a href="{{path('etudiant')}}" class="nav-link">Ajouter Etudiant</a>
+			</li>
+			<li class="nav-item">
+				<a href="{{path('liste_chambre')}}" class="nav-link">Liste Chambre</a>
+			</li>
+			<li class="nav-item">
+				<a href="{{path('liste_etudiant')}}" class="nav-link">Liste Etudiant</a>
+			</li>
+		</ul>
+		<div class="example-wrapper">
+			<div class=""> {% block body %}{% endblock %}
+				</div>
+			</div>
+			{% block javascripts %}{% endblock %}
+		</body>
+	</html>

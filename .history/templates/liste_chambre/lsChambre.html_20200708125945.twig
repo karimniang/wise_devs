@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+
+{% block body %}
+
+	<h2>Hello Voici la liste des chambres ! ✅</h2>
+
+	<table id="maTable">
+		<tr>
+			<th>Numero</th>
+			<th>Type</th>
+			<th>Numero Bat</th>
+			<th>Action</th>
+		</tr>
+		{% for chambre in chambres %}
+			<tr>
+				<td>{{chambre.numero}}</td>
+				<td>{{chambre.type}}</td>
+				<td>{{chambre.numeroBat}}</td>
+				<td>
+					<button class="btn-secondary">
+						<a href="{{path('chambre_update',{'id':chambre.id})}}">
+							Update</a>
+					</button>
+				</td>
+			</tr>
+		{% endfor %}
+	</table>
+
+{% endblock %}
+{% block javascripts %}
+	<script src="JS/listeChambre.js"></script>
+	<link rel="stylesheet" type="text/css" href="/DataTables/datatables.css">
+	<script type="text/javascript" charset="utf8" src="/DataTables/datatables.js"></script>
+{% endblock %}

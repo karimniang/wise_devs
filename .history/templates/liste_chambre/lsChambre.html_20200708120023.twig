@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+
+{% block body %}
+
+	<h2>Hello Voici la liste des chambres ! ✅</h2>
+
+	<table id="maTable">
+		<tr>
+			<th>Numero</th>
+			<th>Type</th>
+			<th>Numero Bat</th>
+			<th>Action</th>
+		</tr>
+		{% for chambre in chambres %}
+			<tr>
+				<td>{{chambre.numero}}</td>
+				<td>{{chambre.type}}</td>
+				<td>{{chambre.numeroBat}}</td>
+				<td>
+					<a href="{{path('chambre_update',{'id':chambre.id})}}">
+						Upppdaa</a>
+				</td>
+			</tr>
+		{% endfor %}
+	</table>
+
+{% endblock %}
+{% block javascripts %}
+	<script src="JS/ajoutEtudiant.js"></script>
+{% endblock %}

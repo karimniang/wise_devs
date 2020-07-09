@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+
+{% block body %}
+
+	<h2 class="text-center">Hello Veuillez Ajouter vos chambre ✅</h2>
+
+	{{form_start(formChambre)}}
+	{{form_widget(formChambre)}}
+	{{form_end(formChambre)}}
+
+
+{% endblock %}
+{% block javascripts %}
+	<script src="JS/ajoutChambre.js"></script>
+{% endblock %}
