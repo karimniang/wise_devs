@@ -1,0 +1,57 @@
+{% extends 'base.html.twig' %}
+
+
+{% block body %}
+	<h1>Hello Voici la liste des etudiants ! ✅</h1>
+	<table id="deuxiemeTable_id">
+		<thead>
+			<tr>
+				<th>Matricule</th>
+				<th>Nom</th>
+				<th>Prenom</th>
+				<th>Email</th>
+				<th>Bourse</th>
+				<th>Adresse</th>
+				<th>Update</th>
+				<th>Supp</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for etudiant in etudiants %}
+				<tr>
+					<td>{{etudiant.matricule}}</td>
+					<td>{{etudiant.nom}}</td>
+					<td>{{etudiant.prenom}}</td>
+					<td>{{etudiant.email}}</td>
+					<td>{{etudiant.libelle}}</td>
+					<td>{{etudiant.adresse}}</td>
+					<td>
+						<button class="btn-primary">
+							<a href="{{path('etudiant_update',{'id':etudiant.id})}}"><img src="css/image/modif.png"></a>
+						</button>
+					</td>
+					<td>
+						<button class="btn-danger">
+							<a href="{{path('etudiant_delete',{'id':etudiant.id})}}" onclick="return confirm('Vous allez supprimer cet etudiant');"><img src="css/image/supp.png"></a>
+						</button>
+					</td>
+				</tr>
+			{% endfor %}
+		</tbody>
+		<tfoot>
+			<tr>
+				<th>Matricule</th>
+				<th>Nom</th>
+				<th>Prenom</th>
+				<th>Email</th>
+				<th>Bourse</th>
+				<th>Adresse</th>
+				<th>Update</th>
+				<th>Supp</th>
+			</tr>
+		</tfoot>
+
+	</table>
+
+
+{% endblock %}

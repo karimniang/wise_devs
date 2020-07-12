@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+
+{% block body %}
+	{% if app.user %}
+		<h2 class="text-center">Hello Veuillez Ajouter vos étudiants✅</h2>
+		<div class="col-md-6">
+			{{form_start(formEtud)}}
+			{{form_widget(formEtud)}}
+			{{form_end(formEtud)}}
+			<div class="alert alert-danger m-1" role="alert" id="message"></div>
+		</div>
+	{% else %}
+		<a href="{{path('app_login')}}">
+		{% endif %}
+
+
+	{% endblock %}

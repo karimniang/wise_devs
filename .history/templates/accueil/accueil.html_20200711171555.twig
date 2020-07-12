@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+
+{% block body %}
+	{% if app.user %}
+		<marquee behavior="" direction="" class="text-center">
+			<h3>Welcome to university of the wise developers<br/>Vous pouvez:<br/>
+				Ajouter Un Etudiant<br/>Lister Les Etudiants<br/>Ajouter Une Chambre<br/>Lister Les Chambre</h3>
+		</marquee>
+
+		{% else %}
+	{% endif %}
+
+
+{% endblock %}

@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+
+{% block body %}
+
+	<h2>Hello Voici la liste des chambres ! ✅</h2>
+
+	<table id="table_id">
+		<thead>
+			<tr>
+				<th>Numero</th>
+				<th>Type</th>
+				<th>Numero Bat</th>
+				<th>Update</th>
+				<th>Supp</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for chambre in chambres %}
+				<tr>
+					<td>{{chambre.numero}}</td>
+					<td>{{chambre.type}}</td>
+					<td>{{chambre.numeroBat}}</td>
+					<td>
+						<button class="btn-primary">
+							<a href="{{path('chambre_update',{'id':chambre.id})}}"><img src="css/image/modif.png"></a>
+						</button>
+					</td>
+					<td>
+						<button class="btn-danger">
+							{% for label,messages in app.flashes %}
+								{% for message in messages %}
+									<a href="{{path('chambre_delete',{'id':chambre.id})}}" onclick="return confirm('{{message}}');">Supppp</a>
+								{% endfor %}
+							{% endfor %}
+						</button>
+					</td>
+				</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+
+{% endblock %}

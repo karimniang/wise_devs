@@ -1,0 +1,51 @@
+{% extends 'base.html.twig' %}
+
+
+{% block body %}
+
+	<h2>Hello Voici la liste des chambres ! ✅</h2>
+	{% for chambre in chambres %}
+		{% for etudiant in etudiants %}
+			{% if etudiant.loger and etudiant.loger.id === chambre.id %}
+				<pre>
+{{ dump(chambre.id) }}
+</pre>
+			{% else %}
+				<pre>
+{{ dump({{'fffff'}}) }}
+</pre>
+			{% endif %}
+		{% endfor %}
+	{% endfor %}
+
+	<table id="table_id">
+		<thead>
+			<tr>
+				<th>Numero</th>
+				<th>Type</th>
+				<th>Numero Bat</th>
+				<th>Update</th>
+				<th>Supp</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for chambre in chambres %}
+				<tr>
+					<td>{{chambre.numero}}</td>
+					<td>{{chambre.type}}</td>
+					<td>{{chambre.numeroBat}}</td>
+					<td>
+						<button class="btn-primary">
+							<a href="{{path('chambre_update',{'id':chambre.id})}}"><img src="css/image/modif.png"></a>
+						</button>
+					</td>
+					<td>
+						<button class="btn-danger">
+							<a href="{{path('chambre_delete',{'id':chambre.id})}}" id="verif" val="{{chambre.id}}"><img src="css/image/supp.png"></a>
+						</button>
+					</td>
+				</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+{% endblock %}

@@ -1,0 +1,12 @@
+body {
+  background-image: url(./image/bgi.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.icon {
+  height: 20px;
+  width: 20px;
+}
+a {
+  text-decoration: none;
+}

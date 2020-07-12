@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+
+{% block body %}
+	<h1>Hello Voici la liste des etudiants ! ✅</h1>
+	<table id="deuxiemeTable_id">
+		<thead>
+			<tr>
+				<th>Nom</th>
+				<th>Prenom</th>
+				<th>Email</th>
+				<th>Telephone</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for etudiant in etudiants %}
+				<tr>
+					<td>{{etudiant.numero}}</td>
+					<td>{{etudiant.type}}</td>
+					<td>{{etudiant.numeroBat}}</td>
+					<td>
+						Update</td>
+				</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+
+
+{% endblock %}

@@ -1,0 +1,54 @@
+{% extends 'base.html.twig' %}
+
+
+{% block body %}
+	<h1>Hello Voici la liste des etudiants ! ✅</h1>
+	<table id="deuxiemeTable_id">
+		<thead>
+			<tr>
+				<th>Nom</th>
+				<th>Prenom</th>
+				<th>Email</th>
+				<th>Telephone</th>
+				<th>Date Naiss</th>
+				<th>Update</th>
+				<th>Supp</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for etudiant in etudiants %}
+				<tr>
+					<td>{{etudiant.nom}}</td>
+					<td>{{etudiant.prenom}}</td>
+					<td>{{etudiant.email}}</td>
+					<td>{{etudiant.telephone}}</td>
+					<td>{{etudiant.dateNaissance|date('d/m/y')}}</td>
+					<td>
+						<button class="btn-primary">
+							<a href="{{path('etudiant_update',{'id':etudiant.id})}}"><img src="css/image/modif.png"></a>
+						</button>
+					</td>
+					<td>
+						<button class="btn-danger">
+							<img src="css/image/supp.png">
+						</button>
+					</td>
+				</tr>
+			{% endfor %}
+		</tbody>
+		<tfoot>
+			<tr>
+				<th>Nom</th>
+				<th>Prenom</th>
+				<th>Email</th>
+				<th>Telephone</th>
+				<th>Date Naiss</th>
+				<th>Update</th>
+				<th>Supp</th>
+			</tr>
+		</tfoot>
+
+	</table>
+
+
+{% endblock %}

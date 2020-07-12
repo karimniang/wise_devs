@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>
+			{% block title %}Welcome Devs!
+			{% endblock %}
+		</title>
+		{% block stylesheets %}
+			<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+			<link rel="stylesheet" href="css/style.css">
+			<style>
+				.example-wrapper {
+					background: blue;
+					margin: 2em auto;
+					max-width: 900px;
+					width: 95%;
+					font: 18px / 1.5 sans-serif;
+				}
+				.example-wrapper code {
+					background: #F5F5F5;
+					padding: 2px 6px;
+				}
+			</style>
+			<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css">
+
+
+		{% endblock %}
+	</head>
+	<body>
+		<div class="alert alert-primary " style="height: 90px;">
+			<h2 class="h-auto text-center">Wise developers University</h2>
+		</div>
+		<ul class="nav nav-tabs" id="navId">
+			<li class="nav-item">
+				<a href="{{path('accueil')}}" class="nav-link active"><img src="css/image/acc.png" class="icon">
+					Accueil</a>
+			</li>
+			<li class="nav-item">
+				<a href="{{path('chambre')}}" class=" nav-link">Ajouter Chambre</a>
+			</li>
+			<li class="nav-item">
+				<a href="{{path('etudiant')}}" class="nav-link">Ajouter Etudiant</a>
+			</li>
+			<li class="nav-item">
+				<a href="{{path('liste_chambre')}}" class="nav-link">Liste Chambre</a>
+			</li>
+			<li class="nav-item">
+				<a href="{{path('liste_etudiant')}}" class="nav-link">Liste Etudiant</a>
+			</li>
+		</ul>
+		<div class="example-wrapper">
+			<div class="card m-4">
+				{% if app.user %}
+					<div class="mb-3">
+						You are logged in as
+						{{ app.user.username }},
+						<a href="{{ path('app_logout') }}">Logout</a>
+					</div>
+					{% block body %}{% endblock %}
+
+				{% else %}
+					<p>
+						Veuillez vous connnecte pour accéder aux fonctionnalités de ce projet</p>
+					<a class="btn btn-outline-primary" href="{{path('app_login')}}">
+						connexionn</a>
+
+				{% endif %}
+			</div>
+		</div>
+		{% block javascripts %}
+			<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+			<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+			<script type="text/javascript" charset="utf8" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+			<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
+			<script src="JS/ajoutEtudiant.js"></script>
+			<script src="JS/listeChambre.js"></script>
+			<script src="JS/ajoutChambre.js"></script>
+		{% endblock %}
+
+	</body>
+</html>

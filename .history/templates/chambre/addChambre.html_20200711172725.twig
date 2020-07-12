@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+
+{% block body %}
+	{% if app.user %}
+		<div class="container">
+			<h2 class="text-center">Hello Veuillez Ajouter vos chambre ✅</h2>
+			<div class="form-group">
+				{{form_start(formChambre)}}
+				{{form_widget(formChambre)}}
+				<br></br>
+			<button type="submit" name="" id="" class="btn btn-warning">Ajouter</button>
+			{{form_end(formChambre)}}
+		</div>
+	</div>
+{% else %}
+	<a href="{{path('app_login')}}">Connexion</a>
+
+{% endif %}{% endblock %}

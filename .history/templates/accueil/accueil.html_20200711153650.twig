@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+
+{% block body %}
+	{% if app.user %}
+		<div class="mb-3">
+			You are logged in as
+			{{ app.user.username }},
+			<a href="{{ path('app_logout') }}">Logout</a>
+		</div>
+	{% endif %}
+
+	<marquee behavior="" direction="" class="text-center">
+		<h3>Welcome to university of the wise developers<br/>Vous pouvez:<br/>
+			Ajouter Un Etudiant<br/>Lister Les Etudiants<br/>Ajouter Une Chambre<br/>Lister Les Chambre</h3>
+	</marquee>
+
+{% endblock %}
